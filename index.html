@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  var w = (window.screen && screen.width) || window.innerWidth;
+  if (w <= 700) {
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (vp) vp.setAttribute('content', 'width=900');
+  }
+})();
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;overflow-x:hidden;max-width:100%}
+body{font-family:"Noto Sans TC",system-ui,sans-serif}
+img{max-width:100%}
+details.faq summary{cursor:pointer;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+a{color:oklch(0.38 0.07 155);text-decoration:none}
+a:hover{color:oklch(0.3 0.08 155)}
+@keyframes popIn{from{opacity:0;transform:scale(.94) translateY(6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes pulseDots{0%,100%{opacity:.35}50%{opacity:1}}
+.reveal{opacity:0;transform:translateX(-36px);transition:opacity .7s ease, transform .7s ease}
+.reveal-visible{opacity:1;transform:translateX(0)}
+.nav-link{color:inherit}
+.nav-link:hover{color:oklch(0.38 0.07 155)}
+.footer-nav-link{color:rgba(255,255,255,.65);transition:color .15s ease}
+.footer-nav-link:hover{color:#fff}
+.contact-input::placeholder{color:rgba(255,255,255,.45)}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:22px 40px;border-bottom:1px solid oklch(0.91 0.005 90);gap:16px}
+.site-nav-links{display:flex;gap:26px;font-size:14px;color:oklch(0.4 0.01 90);white-space:nowrap;flex-wrap:nowrap}
+.site-nav-cta{flex:none;white-space:nowrap}
+.container-pad{padding-left:72px;padding-right:72px}
+.gallery-scroll{scrollbar-width:thin;scrollbar-color:oklch(0.38 0.07 155) oklch(0.93 0.005 155)}
+.gallery-scroll::-webkit-scrollbar{height:8px}
+.gallery-scroll::-webkit-scrollbar-track{background:oklch(0.93 0.005 155);border-radius:10px}
+.gallery-scroll::-webkit-scrollbar-thumb{background:oklch(0.38 0.07 155);border-radius:10px}
+.gallery-item:hover{border-color:oklch(0.38 0.07 155) !important;transform:translateY(-4px)}
+.course-card{transition:background-color .22s ease, border-color .22s ease}
+.course-card:hover{background:oklch(0.38 0.07 155) !important;border-color:oklch(0.38 0.07 155) !important}
+.course-card:hover *{color:#fff !important;opacity:1 !important}
+@media (max-width:1100px){
+  .site-nav-links{gap:16px;font-size:13px}
+  .site-nav{padding:18px 24px}
+}
+@media (max-width:1024px){
+  .container-pad{padding-left:40px !important;padding-right:40px !important}
+}
+@media (max-width:480px){
+  .footer-row{flex-direction:column !important;gap:12px !important;text-align:center !important}
+  .ai-widget{right:14px !important;bottom:14px !important}
+}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="background:#fdfcfa;color:oklch(0.22 0.01 90);font-family:'Noto Sans TC',sans-serif;position:relative">
+
+  <!-- NAV -->
+  <div class="site-nav" style="background:#fdfcfa">
+    <div style="flex:none">
+      <div style="font-family:'Noto Serif TC',serif;font-weight:600;font-size:22px;letter-spacing:0.02em;color:oklch(0.22 0.01 90);white-space:nowrap">騰羽自然</div>
+      <div style="font-size:12px;color:oklch(0.55 0.01 90);letter-spacing:0.05em;margin-top:2px;white-space:nowrap">豐騰老師 · 自然科學家教</div>
+    </div>
+    <div class="site-nav-links">
+      <a class="nav-link" href="#home">首頁</a><a class="nav-link" href="#about">關於我</a><a class="nav-link" href="#courses">課程方案</a><a class="nav-link" href="#testimonials">學生評價</a><a class="nav-link" href="#faq">常見問題</a><a class="nav-link" href="#contact">預約諮詢</a>
+    </div>
+    <a href="https://line.me/ti/p/~peter621020" target="_blank" class="site-nav-cta" style="padding:10px 24px;border-radius:2px;background:oklch(0.38 0.07 155);color:#fff;font-size:14px;letter-spacing:0.03em">加 LINE 諮詢</a>
+  </div>
+
+  <!-- HERO -->
+  <div id="home" class="hero-grid container-pad" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;padding-top:100px;padding-bottom:110px;align-items:center">
+    <div class="reveal">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:22px">新竹 高中化學 ・ 國中理化 家教</div>
+      <div class="hero-title" style="font-family:'Noto Serif TC',serif;font-size:52px;line-height:1.4;font-weight:600;color:oklch(0.2 0.01 90);margin-bottom:28px">讓自然科，<br>成為孩子的好朋友。</div>
+      <div style="font-size:16px;line-height:1.9;color:oklch(0.45 0.01 90);max-width:460px;margin-bottom:40px">豐騰老師，5 年家教經驗、正式中等自然科教師證。用「剝洋蔥式」教學法，把抽象概念變成孩子聽得懂的邏輯，同時協助學習歷程檔案準備。</div>
+      <div style="display:flex;gap:16px">
+        <a href="#contact" style="padding:14px 30px;background:oklch(0.38 0.07 155);color:#fff;font-size:15px;letter-spacing:0.02em;border-radius:2px">預約免費試聽</a>
+        <a href="#courses" style="padding:14px 30px;border:1px solid oklch(0.8 0.01 90);color:oklch(0.3 0.01 90);font-size:15px;border-radius:2px">查看課程方案</a>
+      </div>
+    </div>
+    <div class="reveal" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:oklch(0.94 0.015 155)">
+      <img src="uploads/photo-1783352116909.png" alt="豐騰老師教學照片" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="container-pad" style="padding-top:100px;padding-bottom:100px;background:oklch(0.97 0.006 155)">
+    <div class="about-grid" style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;margin-bottom:64px">
+      <div class="reveal">
+        <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:16px">ABOUT · 關於我</div>
+        <div class="section-title" style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:600;line-height:1.4;color:oklch(0.2 0.01 90)">學經歷與<br>教學理念</div>
+      </div>
+      <div class="reveal">
+        <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:44px">
+          <div style="display:flex;gap:24px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;color:oklch(0.38 0.07 155);width:90px;flex:none">學歷</div>
+            <div style="font-size:15px;color:oklch(0.35 0.01 90);line-height:1.7">國立中央大學化學研究所畢業</div>
+          </div>
+          <div style="display:flex;gap:24px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;color:oklch(0.38 0.07 155);width:90px;flex:none">證照</div>
+            <div style="font-size:15px;color:oklch(0.35 0.01 90);line-height:1.7">正式中等自然科教師證</div>
+          </div>
+          <div style="display:flex;gap:24px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;color:oklch(0.38 0.07 155);width:90px;flex:none">現職</div>
+            <div style="font-size:15px;color:oklch(0.35 0.01 90);line-height:1.7">兼任高中化學與國中理化教師，熟悉現行課綱與升學趨勢</div>
+          </div>
+          <div style="display:flex;gap:24px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;color:oklch(0.38 0.07 155);width:90px;flex:none">家教經驗</div>
+            <div style="font-size:15px;color:oklch(0.35 0.01 90);line-height:1.7">5 年，教授高中化學、高中物理、國中理化、國中生物</div>
+          </div>
+        </div>
+        <div style="padding:32px;background:#fff;border-left:2px solid oklch(0.38 0.07 155);font-family:'Noto Serif TC',serif;font-size:19px;line-height:1.85;color:oklch(0.3 0.01 90)">
+          「自然科不該死記硬背。我會透過大量生活實例，讓抽象概念變得好懂，並用剝洋蔥式教學，一步步確認孩子確實掌握、建立學習成就感。」
+        </div>
+      </div>
+    </div>
+    <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+      <div class="reveal" style="background:#fff;padding:28px 24px;border-radius:4px">
+        <div style="font-size:15px;font-weight:600;color:oklch(0.22 0.01 90);margin-bottom:10px">學術與實務並重</div>
+        <div style="font-size:13.5px;line-height:1.7;color:oklch(0.5 0.01 90)">熟悉升學策略，也懂得引導素養導向的科學思維</div>
+      </div>
+      <div class="reveal" style="background:#fff;padding:28px 24px;border-radius:4px">
+        <div style="font-size:15px;font-weight:600;color:oklch(0.22 0.01 90);margin-bottom:10px">學習歷程支援</div>
+        <div style="font-size:13.5px;line-height:1.7;color:oklch(0.5 0.01 90)">協助製作學習歷程檔案，完善備審資料</div>
+      </div>
+      <div class="reveal" style="background:#fff;padding:28px 24px;border-radius:4px">
+        <div style="font-size:15px;font-weight:600;color:oklch(0.22 0.01 90);margin-bottom:10px">客製化教學</div>
+        <div style="font-size:13.5px;line-height:1.7;color:oklch(0.5 0.01 90)">依學生興趣與程度調整節奏，激發學習動機</div>
+      </div>
+      <div class="reveal" style="background:#fff;padding:28px 24px;border-radius:4px">
+        <div style="font-size:15px;font-weight:600;color:oklch(0.22 0.01 90);margin-bottom:10px">親切耐心</div>
+        <div style="font-size:13.5px;line-height:1.7;color:oklch(0.5 0.01 90)">讓自然科學習變得輕鬆、有趣、充滿成就感</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <div id="courses" class="container-pad" style="padding-top:100px;padding-bottom:100px">
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:16px">COURSES · 課程方案</div>
+      <div class="section-title" style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:600;color:oklch(0.2 0.01 90)">依需求選擇合適的方案</div>
+    </div>
+    <div style="text-align:center;margin-bottom:56px">
+      <a href="#contact" style="display:inline-block;padding:8px 20px;background:oklch(0.96 0.02 155);color:oklch(0.35 0.08 155);font-size:14px;border-radius:100px">首次試聽課程完全免費，歡迎預約體驗 →</a>
+    </div>
+    <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
+      <div class="course-card reveal" style="border:1px solid oklch(0.9 0.005 90);border-radius:4px;padding:40px 30px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;margin-bottom:8px">高中化學／物理<br>一對一</div>
+        <div style="font-size:13px;color:oklch(0.5 0.01 90);margin-bottom:24px">學測 ・ 分科測驗</div>
+        <div style="font-family:'Noto Serif TC',serif;font-size:28px;color:oklch(0.38 0.07 155);margin-bottom:0">NT$ 1,500<span style="font-size:13px;color:oklch(0.5 0.01 90)"> / 小時</span></div>
+      </div>
+      <div class="course-card reveal" style="border:1px solid oklch(0.9 0.005 90);border-radius:4px;padding:40px 30px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;margin-bottom:8px">國中理化／生物<br>一對一</div>
+        <div style="font-size:13px;color:oklch(0.5 0.01 90);margin-bottom:24px">會考衝刺 ・ 基礎建立</div>
+        <div style="font-family:'Noto Serif TC',serif;font-size:28px;color:oklch(0.38 0.07 155)">NT$ 1,000<span style="font-size:13px;color:oklch(0.5 0.01 90)"> / 小時</span></div>
+      </div>
+      <div class="course-card reveal" style="border:1px solid oklch(0.9 0.005 90);border-radius:4px;padding:40px 30px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;margin-bottom:8px">高中 小班<br>（5人內）</div>
+        <div style="font-size:13px;color:oklch(0.5 0.01 90);margin-bottom:24px">同校 ・ 同進度組班</div>
+        <div style="font-family:'Noto Serif TC',serif;font-size:28px;color:oklch(0.38 0.07 155)">NT$ 850<span style="font-size:13px;color:oklch(0.5 0.01 90)"> / 人 / 小時</span></div>
+      </div>
+      <div class="course-card reveal" style="border:1px solid oklch(0.9 0.005 90);border-radius:4px;padding:40px 30px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;margin-bottom:8px">國中 小班<br>（5人內）</div>
+        <div style="font-size:13px;color:oklch(0.5 0.01 90);margin-bottom:24px">同校 ・ 同進度組班</div>
+        <div style="font-family:'Noto Serif TC',serif;font-size:28px;color:oklch(0.38 0.07 155)">NT$ 750<span style="font-size:13px;color:oklch(0.5 0.01 90)"> / 人 / 小時</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div id="testimonials" class="container-pad" style="padding-top:100px;padding-bottom:100px;background:oklch(0.97 0.006 155)">
+    <div style="text-align:center;margin-bottom:64px">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:16px">RESULTS · 學生評價</div>
+      <div class="section-title" style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:600;color:oklch(0.2 0.01 90)">看得見的進步</div>
+    </div>
+    <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:56px">
+      <div style="text-align:center"><div style="font-family:'Noto Serif TC',serif;font-size:38px;color:oklch(0.38 0.07 155)">5 年</div><div style="font-size:14px;color:oklch(0.45 0.01 90);margin-top:8px">家教教學經驗</div></div>
+      <div style="text-align:center"><div style="font-family:'Noto Serif TC',serif;font-size:38px;color:oklch(0.38 0.07 155)">6+</div><div style="font-size:14px;color:oklch(0.45 0.01 90);margin-top:8px">合作學校經驗</div></div>
+      <div style="text-align:center"><div style="font-family:'Noto Serif TC',serif;font-size:38px;color:oklch(0.38 0.07 155)">4 科</div><div style="font-size:14px;color:oklch(0.45 0.01 90);margin-top:8px">化學／物理／理化／生物</div></div>
+      <div style="text-align:center"><div style="font-family:'Noto Serif TC',serif;font-size:38px;color:oklch(0.38 0.07 155)">免費</div><div style="font-size:14px;color:oklch(0.45 0.01 90);margin-top:8px">首次試聽課程</div></div>
+    </div>
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <div class="reveal" style="background:#fff;padding:36px;border-radius:4px">
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.35 0.01 90);margin-bottom:24px">「豐騰老師很有耐心，孩子原本很怕化學計算題，上完課後學測化學進步了三級分。」</div>
+        <div style="font-size:14px;color:oklch(0.5 0.01 90)">— 高三學生家長</div>
+      </div>
+      <div class="reveal" style="background:#fff;padding:36px;border-radius:4px">
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.35 0.01 90);margin-bottom:24px">「老師會用生活例子解釋理化，比補習班還好懂，段考從 60 分進步到 85 分。」</div>
+        <div style="font-size:14px;color:oklch(0.5 0.01 90)">— 國二學生</div>
+      </div>
+      <div class="reveal" style="background:#fff;padding:36px;border-radius:4px">
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.35 0.01 90);margin-bottom:24px">「老師也幫我一起準備學習歷程檔案，讓備審資料完成得更有方向。」</div>
+        <div style="font-size:14px;color:oklch(0.5 0.01 90)">— 高二學生</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES GALLERY -->
+  <div class="container-pad" style="padding-top:100px;padding-bottom:100px">
+    <div style="text-align:center;margin-bottom:56px">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:16px">MOMENTS · 課程活動剪影</div>
+      <div class="section-title" style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:600;color:oklch(0.2 0.01 90)">教學與實作的日常</div>
+      <div style="font-size:13px;color:oklch(0.55 0.01 90);margin-top:10px">左右滑動查看更多 →</div>
+    </div>
+    <div class="gallery-scroll" style="display:flex;gap:24px;overflow-x:auto;padding:6px 6px 20px 6px">
+      <div class="gallery-item reveal" style="flex:0 0 380px;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:3px solid transparent;transition:border-color .25s ease, transform .25s ease;cursor:pointer"><img src="uploads/S__9003071.jpg" alt="課程活動照片" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="gallery-item reveal" style="flex:0 0 380px;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:3px solid transparent;transition:border-color .25s ease, transform .25s ease;cursor:pointer"><img src="uploads/S__9003072.jpg" alt="課程活動照片" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="gallery-item reveal" style="flex:0 0 380px;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:3px solid transparent;transition:border-color .25s ease, transform .25s ease;cursor:pointer"><img src="uploads/S__9003073.jpg" alt="課程活動照片" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div class="gallery-item reveal" style="flex:0 0 380px;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:3px solid transparent;transition:border-color .25s ease, transform .25s ease;cursor:pointer"><img src="uploads/S__9003074.jpg" alt="課程活動照片" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    </div>
+  </div>
+
+  <!-- REAL CLASSROOM COMING SOON -->
+  <div class="container-pad" style="padding-top:80px;padding-bottom:80px;background:oklch(0.97 0.006 155);text-align:center">
+    <span style="display:inline-block;padding:6px 18px;background:oklch(0.38 0.07 155);color:#fff;font-size:12px;letter-spacing:0.1em;border-radius:100px;margin-bottom:20px">COMING SOON</span>
+    <div style="font-family:'Noto Serif TC',serif;font-size:30px;font-weight:600;color:oklch(0.2 0.01 90);margin-bottom:14px">實體教室，籌備中</div>
+    <div style="font-size:15px;line-height:1.9;color:oklch(0.45 0.01 90);max-width:520px;margin:0 auto">主要規劃於新竹市，提供更完整的實體上課空間。目前仍以到府教學與線上教學為主，敬請期待後續消息！</div>
+  </div>
+
+  <!-- FAQ -->
+  <div id="faq" class="container-pad" style="padding-top:100px;padding-bottom:100px;max-width:920px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:56px">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.38 0.07 155);margin-bottom:16px">FAQ · 常見問題</div>
+      <div class="section-title" style="font-family:'Noto Serif TC',serif;font-size:36px;font-weight:600;color:oklch(0.2 0.01 90)">你可能想知道的事</div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <details class="faq reveal" style="padding:24px 0;border-bottom:1px solid oklch(0.91 0.005 90)">
+        <summary style="font-size:17px;font-weight:600;color:oklch(0.22 0.01 90)">上課地點在哪裡？可以線上上課嗎？</summary>
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.45 0.01 90);margin-top:14px">新竹市可安排到府教學，亦提供線上教學，依學生所在地區彈性調整。</div>
+      </details>
+      <details class="faq reveal" style="padding:24px 0;border-bottom:1px solid oklch(0.91 0.005 90)">
+        <summary style="font-size:17px;font-weight:600;color:oklch(0.22 0.01 90)">線上教學的上課方式是什麼？</summary>
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.45 0.01 90);margin-top:14px">以平板與電腦螢幕鏡頭現場同步教學，非影片錄製課程，所有教材與資源都和實體授課無差別。</div>
+      </details>
+      <details class="faq reveal" style="padding:24px 0;border-bottom:1px solid oklch(0.91 0.005 90)">
+        <summary style="font-size:17px;font-weight:600;color:oklch(0.22 0.01 90)">沒有基礎也可以開始上課嗎？</summary>
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.45 0.01 90);margin-top:14px">第一次上課會先進行程度診斷，依照學生現況規劃專屬的學習進度，完全從基礎開始也沒問題。</div>
+      </details>
+      <details class="faq reveal" style="padding:24px 0;border-bottom:1px solid oklch(0.91 0.005 90)">
+        <summary style="font-size:17px;font-weight:600;color:oklch(0.22 0.01 90)">可以先試聽嗎？</summary>
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.45 0.01 90);margin-top:14px">首次試聽課程完全免費，歡迎透過下方表單或 LINE 直接預約。</div>
+      </details>
+      <details class="faq reveal" style="padding:24px 0;border-bottom:1px solid oklch(0.91 0.005 90)">
+        <summary style="font-size:17px;font-weight:600;color:oklch(0.22 0.01 90)">課程費用如何計算與收費？</summary>
+        <div style="font-size:15px;line-height:1.8;color:oklch(0.45 0.01 90);margin-top:14px">依課程方案按堂數或月結計費，詳細報價請參考上方課程方案，或於試聽時進一步說明。</div>
+      </details>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div id="contact" class="container-pad" style="padding-top:100px;padding-bottom:100px;background:oklch(0.2 0.01 90)">
+    <div class="reveal" style="max-width:600px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-size:13px;letter-spacing:0.15em;color:oklch(0.6 0.05 155);margin-bottom:16px">CONTACT · 預約諮詢</div>
+      <div style="font-family:'Noto Serif TC',serif;font-size:34px;font-weight:600;line-height:1.4;color:#fff;margin-bottom:20px">留下資訊，<br>我會盡快與你聯繫</div>
+      <div style="font-size:15px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:36px">免費試聽一堂課，了解孩子目前狀況並提供學習建議。</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(255,255,255,.75);margin-bottom:32px">
+        <div>LINE ID：peter621020</div>
+        <div>Email：peter621020@gmail.com</div>
+        <div>電話：0979-086-535</div>
+        <div>上課地區：新竹市 ／ 線上教學</div>
+      </div>
+      <a href="https://line.me/ti/p/~peter621020" target="_blank" style="display:inline-block;padding:12px 30px;background:oklch(0.6 0.09 155);color:oklch(0.15 0.03 155);font-size:14px;letter-spacing:0.02em;border-radius:2px;margin-bottom:48px">加 LINE 好友</a>
+      <div style="width:64px;height:1px;background:rgba(255,255,255,.2);margin-bottom:32px"></div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;column-gap:32px;row-gap:14px;font-size:14px">
+        <a class="footer-nav-link" href="#home">首頁</a>
+        <a class="footer-nav-link" href="#about">關於我</a>
+        <a class="footer-nav-link" href="#courses">課程方案</a>
+        <a class="footer-nav-link" href="#testimonials">學生評價</a>
+        <a class="footer-nav-link" href="#faq">常見問題</a>
+        <a class="footer-nav-link" href="#contact">預約諮詢</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="container-pad footer-row" style="padding-top:36px;padding-bottom:36px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.01 90)">
+    <div>© 2026 騰羽自然 · 豐騰老師</div>
+    <div style="display:flex;gap:24px"><a href="https://line.me/ti/p/~peter621020" target="_blank">LINE</a><span>peter621020@gmail.com</span></div>
+  </div>
+
+  <!-- AI ASSISTANT WIDGET -->
+  <div class="ai-widget" style="position:fixed;right:32px;bottom:32px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:50">
+
+    <sc-if value="{{ aiOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;z-index:5;width:min(340px,88vw);background:#fff;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.16);border:1px solid oklch(0.92 0.005 155);overflow:hidden;display:flex;flex-direction:column;font-family:'Noto Sans TC',sans-serif;animation:popIn .18s ease-out">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:oklch(0.38 0.07 155);color:#fff;flex:none">
+          <div style="display:flex;align-items:center;gap:10px">
+            <img src="uploads/flask-icon-transparent.png" alt="AI小助手" style="width:32px;height:32px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;flex:none">
+            <div style="font-size:14px;font-weight:600">騰騰的AI小助手</div>
+          </div>
+          <div onClick="{{ toggleAi }}" style="cursor:pointer;font-size:18px;line-height:1;opacity:0.85">×</div>
+        </div>
+
+        <div style="padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1;min-height:200px;max-height:340px">
+          <sc-for list="{{ messages }}" as="msg" hint-placeholder-count="1">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-if value="{{ msg.fromUser }}" hint-placeholder-val="{{ false }}">
+                <div style="align-self:flex-end;max-width:85%;background:oklch(0.38 0.07 155);color:#fff;padding:10px 14px;border-radius:10px;font-size:13.5px;line-height:1.6;animation:popIn .16s ease-out">{{ msg.text }}</div>
+              </sc-if>
+              <sc-if value="{{ msg.fromAi }}" hint-placeholder-val="{{ false }}">
+                <div style="align-self:flex-start;max-width:94%;background:oklch(0.97 0.006 155);color:oklch(0.3 0.01 90);padding:10px 14px;border-radius:10px;font-size:13.5px;line-height:1.6;animation:popIn .16s ease-out">
+                  <sc-if value="{{ msg.thinking }}" hint-placeholder-val="{{ false }}">
+                    <span style="display:inline-block;animation:pulseDots 1.2s ease-in-out infinite">⋯⋯ 思考中</span>
+                  </sc-if>
+                  <sc-if value="{{ msg.thinkingInverse }}" hint-placeholder-val="{{ true }}">
+                    <div>{{ msg.text }}</div>
+                  </sc-if>
+                </div>
+              </sc-if>
+              <sc-if value="{{ msg.suggestions }}" hint-placeholder-val="{{ false }}">
+                <div style="align-self:flex-start;max-width:96%;display:flex;flex-wrap:wrap;gap:6px">
+                  <sc-for list="{{ msg.suggestions }}" as="sug" hint-placeholder-count="4">
+                    <div onClick="{{ sug.onClick }}" style="padding:7px 12px;border:1px solid oklch(0.88 0.01 155);border-radius:100px;font-size:12.5px;color:oklch(0.35 0.07 155);cursor:pointer;background:#fff;white-space:nowrap">{{ sug.label }}</div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;gap:8px;padding:12px 16px;border-top:1px solid oklch(0.92 0.005 155);flex:none">
+          <input value="{{ draft }}" onChange="{{ onDraftChange }}" onKeyDown="{{ onKeyDown }}" placeholder="輸入你的問題..." style="flex:1;padding:10px 14px;border:1px solid oklch(0.88 0.005 155);border-radius:100px;font-size:13.5px;outline:none;font-family:'Noto Sans TC',sans-serif">
+          <div onClick="{{ sendDraft }}" style="flex:none;width:38px;height:38px;border-radius:50%;background:oklch(0.38 0.07 155);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px">➤</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="position:relative;width:64px;height:64px;flex:none">
+      <sc-if value="{{ showLabel }}" hint-placeholder-val="{{ true }}">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);overflow:visible;pointer-events:none">
+          <path id="aiArcPath" d="M 10.5,35.6 A 42,42 0 0 1 89.5,35.6" fill="none"></path>
+          <text font-size="11.5" font-family="'Noto Sans TC',sans-serif" fill="oklch(0.3 0.01 90)">
+            <textPath href="#aiArcPath" startOffset="50%" text-anchor="middle">騰騰的AI助手</textPath>
+          </text>
+        </svg>
+      </sc-if>
+      <a href="#home" style="position:absolute;bottom:96px;right:8px;width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.14);border:1px solid oklch(0.92 0.005 155);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;color:oklch(0.38 0.07 155);text-align:center;line-height:1.2">Home</a>
+      <div onClick="{{ toggleAi }}" style="width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid oklch(0.92 0.005 155);overflow:hidden">
+        <img src="uploads/flask-icon-transparent.png" alt="AI小助手" style="width:46px;height:46px;object-fit:contain">
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LINE_URL = 'https://line.me/ti/p/~peter621020';
+
+const ANSWERS = {
+  price: '一對一：高中化學／物理每小時 NT$1,500，國中理化／生物每小時 NT$1,000。小型團體班（5人內）：高中 NT$850／人，國中 NT$750／人。首次試聽課程完全免費！',
+  teacher: '豐騰老師畢業於國立中央大學化學研究所，具正式中等自然科教師證，5 年家教經驗，教授高中化學／物理、國中理化／生物，並協助學習歷程檔案準備。',
+  method: '新竹市可安排到府教學，亦提供線上教學。線上採平板與電腦鏡頭現場同步授課，非影片錄製課程，教材資源與實體授課完全相同。',
+  location: '目前主要在新竹市提供到府教學及線上教學，實體教室規劃中，敬請期待！',
+  trial: '首次試聽課程完全免費，歡迎預約體驗！',
+  contact: '歡迎填寫網站下方表單，或加 LINE（ID：peter621020）與我聯繫預約。',
+};
+
+const KB = [
+  { key: 'price', words: ['費用', '收費', '價格', '多少錢', '價位', '學費', '報價'] },
+  { key: 'teacher', words: ['老師', '學歷', '證照', '資歷', '經歷', '簡介', '背景', '畢業'] },
+  { key: 'method', words: ['上課', '方式', '線上', '到府', '教材', '錄影', '平板', '怎麼上'] },
+  { key: 'location', words: ['教室', '地點', '新竹', '實體'] },
+  { key: 'trial', words: ['試聽', '免費體驗'] },
+  { key: 'contact', words: ['預約', '聯繫', '聯絡', 'line', '電話', 'email', '信箱'] },
+];
+
+const FALLBACK = '這個問題我目前答不出來，請直接用 LINE 聯繫我，我會盡快回覆！';
+
+const BASE_CHIPS = [
+  { key: 'price', label: '💰 課程費用' },
+  { key: 'teacher', label: '🎓 老師簡介' },
+  { key: 'method', label: '🖥 上課方式' },
+  { key: 'line', label: '💬 用 LINE 聯繫' },
+];
+
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  state = {
+    aiOpen: false,
+    draft: '',
+    messages: [],
+    msgId: 0,
+    formName: '',
+    formPhone: '',
+    formGrade: '',
+    formMessage: '',
+    formSubmitted: false,
+  };
+
+  componentDidMount() {
+    if (this.state.messages.length === 0) {
+      this.setState({
+        messages: [
+          { id: 0, fromAi: true, fromUser: false, text: 'Hi 我是騰騰的AI小助手，今天我可以怎麼幫你？', suggestions: this.buildSuggestions(null) },
+        ],
+        msgId: 1,
+      });
+    }
+
+    if (this.rootRef.current && window.IntersectionObserver) {
+      const els = this.rootRef.current.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      els.forEach((el) => observer.observe(el));
+    }
+  }
+
+  onNameChange = (e) => this.setState({ formName: e.target.value });
+  onPhoneChange = (e) => this.setState({ formPhone: e.target.value });
+  onGradeChange = (e) => this.setState({ formGrade: e.target.value });
+  onMessageChange = (e) => this.setState({ formMessage: e.target.value });
+
+  submitForm = () => {
+    const { formName, formPhone, formGrade, formMessage } = this.state;
+    const lines = [
+      '【網站預約諮詢】',
+      `姓名：${formName || '未填寫'}`,
+      `電話：${formPhone || '未填寫'}`,
+      `年級/科目：${formGrade || '未填寫'}`,
+      `想了解的內容：${formMessage || '未填寫'}`,
+    ];
+    const body = lines.join('\n');
+    const mailUrl = 'mailto:peter621020@gmail.com?subject=' + encodeURIComponent('網站預約諮詢') + '&body=' + encodeURIComponent(body);
+    window.location.href = mailUrl;
+    this.setState({ formSubmitted: true });
+  };
+
+  toggleAi = () => {
+    this.setState(s => ({ aiOpen: !s.aiOpen }));
+  };
+
+  findAnswerKey(text) {
+    const t = text.toLowerCase();
+    const hit = KB.find(item => item.words.some(w => t.includes(w.toLowerCase())));
+    return hit ? hit.key : null;
+  }
+
+  buildSuggestions(excludeKey) {
+    return BASE_CHIPS.filter(c => c.key !== excludeKey).map(c => ({
+      label: c.label,
+      onClick: c.key === 'line' ? () => window.open(LINE_URL, '_blank') : () => this.handleAsk(c.label.replace(/^\S+\s/, ''), c.key),
+    }));
+  }
+
+  nextId() {
+    const id = this.state.msgId;
+    this.setState({ msgId: id + 1 });
+    return id;
+  }
+
+  handleAsk = (label, forcedKey) => {
+    const userId = this.nextId();
+    const thinkingId = this.nextId();
+    this.setState(s => ({
+      messages: [
+        ...s.messages,
+        { id: userId, fromUser: true, fromAi: false, text: label },
+        { id: thinkingId, fromUser: false, fromAi: true, thinking: true, text: '' },
+      ],
+    }));
+
+    window.setTimeout(() => {
+      const key = forcedKey || this.findAnswerKey(label);
+      const answer = key ? ANSWERS[key] : FALLBACK;
+      const suggestions = this.buildSuggestions(['price', 'teacher', 'method'].includes(key) ? key : null);
+      this.setState(s => ({
+        messages: s.messages.map(m => m.id === thinkingId ? { ...m, thinking: false, text: answer, suggestions } : m),
+      }));
+    }, 700 + Math.random() * 400);
+  };
+
+  onDraftChange = (e) => this.setState({ draft: e.target.value });
+
+  onKeyDown = (e) => {
+    if (e.key === 'Enter') this.sendDraft();
+  };
+
+  sendDraft = () => {
+    const text = this.state.draft.trim();
+    if (!text) return;
+    this.handleAsk(text, null);
+    this.setState({ draft: '' });
+  };
+
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      aiOpen: this.state.aiOpen,
+      showLabel: !this.state.aiOpen,
+      messages: this.state.messages.map(m => ({ ...m, thinkingInverse: !m.thinking })),
+      draft: this.state.draft,
+      toggleAi: this.toggleAi,
+      onDraftChange: this.onDraftChange,
+      onKeyDown: this.onKeyDown,
+      sendDraft: this.sendDraft,
+      formName: this.state.formName,
+      formPhone: this.state.formPhone,
+      formGrade: this.state.formGrade,
+      formMessage: this.state.formMessage,
+      formSubmitted: this.state.formSubmitted,
+      onNameChange: this.onNameChange,
+      onPhoneChange: this.onPhoneChange,
+      onGradeChange: this.onGradeChange,
+      onMessageChange: this.onMessageChange,
+      submitForm: this.submitForm,
+    };
+  }
+}
+</script>
+</body>
+</html>
