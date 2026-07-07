@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  var w = (window.screen && screen.width) || window.innerWidth;
+  if (w <= 700) {
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (vp) vp.setAttribute('content', 'width=820');
+  }
+})();
+</script>
 <script src="./support.js"></script>
-<template id="__bundler_thumbnail" data-bg-color="#fdfcfa">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#fdfcfa"></rect>
-    <circle cx="100" cy="100" r="55" fill="oklch(0.38 0.07 155)"></circle>
-    <text x="100" y="112" font-size="42" text-anchor="middle" fill="#fff" font-family="serif">騰</text>
-  </svg>
-</template>
 </head>
 <body>
 <x-dc>
@@ -55,18 +57,8 @@ a:hover{color:oklch(0.3 0.08 155)}
 @media (max-width:1024px){
   .container-pad{padding-left:40px !important;padding-right:40px !important}
 }
-@media (max-width:680px){
-  .site-nav-links{display:none}
-  .grid-3{grid-template-columns:1fr !important}
-  .container-pad{padding-left:22px !important;padding-right:22px !important}
-  .hero-grid{grid-template-columns:1fr !important;gap:36px !important}
-  .about-grid{grid-template-columns:1fr !important;gap:36px !important}
-  .contact-grid{grid-template-columns:1fr !important}
-  .grid-4{grid-template-columns:repeat(2,1fr) !important;gap:16px !important}
-  .form-2col{grid-template-columns:1fr !important}
+@media (max-width:480px){
   .footer-row{flex-direction:column !important;gap:12px !important;text-align:center !important}
-  .hero-title{font-size:38px !important}
-  .section-title{font-size:28px !important}
   .ai-widget{right:14px !important;bottom:14px !important}
 }
 </style>
